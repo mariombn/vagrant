@@ -1,0 +1,53 @@
+#
+# Vagrant
+#
+<VirtualHost *:80>
+    DocumentRoot /var/www/html/
+    ServerName vagrant.dev
+    ErrorLog ${APACHE_LOG_DIR}/vagrant.dev-error.log
+    CustomLog ${APACHE_LOG_DIR}/vagrant.dev-access.log combined
+</VirtualHost>
+
+#
+# VirtualHost phpMyAmin:
+#
+<VirtualHost *:80>
+    DocumentRoot /var/www/Projects/phpMyAdmin
+    ServerName myadmin.dev
+    ErrorLog ${APACHE_LOG_DIR}/myadmin.dev-error_log
+    CustomLog ${APACHE_LOG_DIR}/myadmin.dev-access_log common
+</VirtualHost>
+
+#
+# VirtualHost ICS
+#
+<VirtualHost *:80>
+    DocumentRoot /var/www/Projects/ics/html
+    ServerName ics.dev
+    <Directory /var/www/Projects/ics/html>
+        #AllowOverride All
+        #Order allow,deny
+        #Allow from alli
+        #Require all granted
+        AddDefaultCharset ISO-8859-1
+    </Directory>
+    SetEnv AMBIENTE desenvolvimento
+    SetEnv PATH_SISTEMA /var/www/Projects/ics/
+    ErrorLog ${APACHE_LOG_DIR}/ics.dev-error_log
+    CustomLog ${APACHE_LOG_DIR}/ics.dev-access_log common
+</VirtualHost>
+
+#
+# VirtualHost ICS EDI
+#
+<VirtualHost *:80>
+    DocumentRoot /var/www/Projects/ics/edi
+    ServerName icsedi.dev
+    <Directory /var/www/Projects/ics/edi>
+        AddDefaultCharset ISO-8859-1
+    </Directory>
+    SetEnv AMBIENTE desenvolvimento
+    SetEnv PATH_SISTEMA /var/www/Projects/ics/
+    ErrorLog ${APACHE_LOG_DIR}/icsedi.dev-error_log
+    CustomLog ${APACHE_LOG_DIR}/icsedi.dev-access_log common
+</VirtualHost>
