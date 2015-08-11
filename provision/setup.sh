@@ -54,6 +54,7 @@ sudo a2ensite virtual-vhosts.conf > /dev/null 2>&1
 sudo service apache2 reload > /dev/null 2>&1
 
 # Copy PHP config files
+echo "Configuring php..."
 sudo mv /etc/php5/apache2/php.ini /etc/php5/apache2/php.ini.old > /dev/null 2>&1
 sudo cp /vagrant/provision/config/php/php.ini /etc/php5/apache2/php.ini > /dev/null 2>&1
 sudo service apache2 restart > /dev/null 2>&1

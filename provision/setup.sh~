@@ -49,11 +49,12 @@ sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysq
 echo "Configuring Apache 2..."
 sudo mv /etc/apache2/apache2.conf /etc/apache2/apache2.conf.old > /dev/null 2>&1
 sudo cp /vagrant/provision/config/apache/apache2.conf /etc/apache2/apache2.conf > /dev/null 2>&1
-sudo cp /vagrant/provision/config/apache/virtual-hosts.conf /etc/apache2/sites-available/tex-vhosts.conf > /dev/null 2>&1
-sudo a2ensite tex-vhosts.conf > /dev/null 2>&1
+sudo cp /vagrant/provision/config/apache/virtual-hosts.conf /etc/apache2/sites-available/virtual-vhosts.conf > /dev/null 2>&1
+sudo a2ensite virtual-vhosts.conf > /dev/null 2>&1
 sudo service apache2 reload > /dev/null 2>&1
 
 # Copy PHP config files
+echo "Configuring php..."
 sudo mv /etc/php5/apache2/php.ini /etc/php5/apache2/php.ini.old > /dev/null 2>&1
 sudo cp /vagrant/provision/config/php/php.ini /etc/php5/apache2/php.ini > /dev/null 2>&1
 sudo service apache2 restart > /dev/null 2>&1
