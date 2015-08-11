@@ -6,3 +6,5 @@ Vagrant configurada com o ambiente LAMP completo
 - apache2
 - php 5.6
 - git
+
+Essa linha foi editada em teste
