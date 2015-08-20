@@ -59,5 +59,11 @@ sudo mv /etc/php5/apache2/php.ini /etc/php5/apache2/php.ini.old > /dev/null 2>&1
 sudo cp /vagrant/provision/config/php/php.ini /etc/php5/apache2/php.ini > /dev/null 2>&1
 sudo service apache2 restart > /dev/null 2>&1
 
+# Install Composer
+echo "Installing Composer..."
+sudo wget https://getcomposer.org/installer > /dev/null 2>&1
+sudo mv composer.phar /usr/local/bin/composer > /dev/null 2>&1
+sudo rm installer > /dev/null 2>&1
+
 # Finish
 echo "Provision complete!"
