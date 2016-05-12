@@ -37,21 +37,12 @@ sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again p
 sudo apt-get install -y mysql-server-5.6 mysql-client-5.6 > /dev/null 2>&1
 
 # Install PHP 5.6
-# echo "Installing PHP 5.6..."
-# sudo add-apt-repository ppa:ondrej/php5-5.6 -y > /dev/null 2>&1
-# sudo apt-get update > /dev/null 2>&1
-# sudo apt-get -y install python-software-properties > /dev/null 2>&1
-# sudo apt-get update > /dev/null 2>&1
-# sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl > /dev/null 2>&1
-
-# Install PHP 7
-echo "Installing PHP 7..."
-sudo add-apt-repository ppa:ondrej/php > /dev/null 2>&1
+echo "Installing PHP 5.6..."
+sudo add-apt-repository ppa:ondrej/php5-5.6 -y > /dev/null 2>&1
 sudo apt-get update > /dev/null 2>&1
-sudo apt-get install php7.0 php7.0-fpm > /dev/null 2>&1
-sudo apt-get install libapache2-mod-php7.0 > /dev/null 2>&1
-sudo apt-get install php7.0-mysql -y > /dev/null 2>&1
-apt-get --purge autoremove -y > /dev/null 2>&1
+sudo apt-get -y install python-software-properties > /dev/null 2>&1
+sudo apt-get update > /dev/null 2>&1
+sudo apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl > /dev/null 2>&1
 
 # Copy Apache config files
 echo "Configuring Apache 2..."
